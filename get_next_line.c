@@ -42,8 +42,8 @@ ssize_t	ft_read_line(int fd, char **buffer)
 	temp = (char *)malloc(BUFFER_SIZE + 1);
 	if (!temp)
 		return (-1);
-	if (bytes_read 	bytes_read = read(fd, temp, BUFFER_SIZE);
-< 0)
+	bytes_read = read(fd, temp, BUFFER_SIZE);
+	if (bytes_read < 0)
 	{
 		free(temp);
 		if (bytes_read == -1)
